@@ -1,5 +1,5 @@
-import pytest
-from caesar_cipher import encrypt, decrypt
+import pytest, nltk
+from caesar_cipher import encrypt, decrypt, crack
 
 
 def test_encrypt_shift_1():
@@ -53,7 +53,7 @@ def test_round_trip():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_crack_phrase():
     phrase = "It was the best of times, it was the worst of times."
     encrypted = encrypt(phrase, 10)
@@ -62,7 +62,7 @@ def test_crack_phrase():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_crack_nonsense():
     phrase = "Ix fhw txe fofg of ndhrl, it nad tho hndrk of allkd."
     encrypted = encrypt(phrase, 10)
